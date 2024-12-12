@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Fact Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .fact-box {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      min-height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Random Fact Generator</h1>
+    <div class="fact-box">
+      <p id="fact"></p>
+    </div>
+    <button id="generateFact">Generate Fact</button>
+  </div>
+
+  <script>
+    // Array of random facts
+    const facts = [
+      "The world's oldest wooden sculpture is a wooden mustan from the 4th millennium BC, found in a Russian village.",
+      "The first product to have a barcode was Wrigley's gum.",
+      "The King of Hearts is the only king without a mustache on a standard playing card.",
+      "A group of bears is called a 'sloth' or 'sleuth'.",
+      "The longest English word is 'pneumonoultramicroscopicsilicovolcanoconiosis', which is a lung disease caused by inhaling volcanic ash.",
+      "The largest known prime number has over 23 million digits.",
+      "The first novel ever written on a typewriter was Tom Sawyer by Mark Twain.",
+      "The first product to have a nutritional label was Corn Flakes.",
+      "The first product to have a barcode was Wrigley's gum.",
+      "A group of porcupines is called a 'prickle'.",
+      "The word 'sandbox' originated from the fact that children used to play in sandboxes at beaches.",
+      "The first computer virus was created in 1983 and was called 'Elk Cloner'.",
+      "Apples are more effective at waking you up in the morning than coffee.",
+      "The longest English word without a vowel is 'rhythms'.",
+      "The first known contraceptive was crocodile dung, used by Egyptians in 2000 B.C.",
+      "The first known product to be sold with a money-back guarantee was a special type of rat poison in 1904.",
+      "Bees have five eyes.",
+      "A group of hippos is called a 'bloat'."
+    ];
+
+    const factElement = document.getElementById("fact");
+    const generateFactButton = document.getElementById("generateFact");
+
+    // Function to generate a random fact
+    function generateRandomFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      factElement.textContent = facts[randomIndex];
+    }
+
+    // Generate initial fact on page load
+    generateRandomFact();
+
+    // Event listener for the Generate Fact button
+    generateFactButton.addEventListener("click", generateRandomFact);
+  </script>
+</body>
+</html>
